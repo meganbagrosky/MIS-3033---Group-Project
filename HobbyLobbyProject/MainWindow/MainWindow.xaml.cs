@@ -23,6 +23,7 @@ namespace MainWindow
         public MainWindow()
         {
             InitializeComponent();
+            //Action request
         }
     }
 }

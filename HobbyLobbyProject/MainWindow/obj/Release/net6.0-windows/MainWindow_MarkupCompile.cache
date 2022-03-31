@@ -1,20 +1,20 @@
 ﻿MainWindow
-1.0.0.0
+
 
 winexe
 C#
 .cs
-C:\Users\megan\Source\Repos\meganbagrosky\MIS-3033---Group-Project\HobbyLobbyProject\MainWindow\obj\Debug\net6.0-windows\
+C:\Users\megan\Source\Repos\meganbagrosky\MIS-3033---Group-Project\HobbyLobbyProject\MainWindow\obj\Release\net6.0-windows\
 MainWindow
 none
 false
-TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+TRACE;RELEASE;NET;NET6_0;NETCOREAPP
 C:\Users\megan\Source\Repos\meganbagrosky\MIS-3033---Group-Project\HobbyLobbyProject\MainWindow\App.xaml
 11407045341
 
-5384439862
+3-1233169557
 194-1708299761
 MainWindow.xaml;
 
-False
+True
 
