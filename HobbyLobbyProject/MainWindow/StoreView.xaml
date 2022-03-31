@@ -10,6 +10,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="https://www.marstudio.com/wp-content/uploads/2015/09/Hobby-Lobby-new-logo-1.jpg"/>
         </Grid.Background>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="128,61,0,0" VerticalAlignment="Top" Height="115" Width="238"/>
 
     </Grid>
 </Window>
