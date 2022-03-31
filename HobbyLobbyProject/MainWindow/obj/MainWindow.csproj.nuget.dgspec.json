@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Helen\\Source\\Repos\\meganbagrosky\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj": {}
+    "C:\\Users\\ghern\\Source\\Repos\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Helen\\Source\\Repos\\meganbagrosky\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj": {
+    "C:\\Users\\ghern\\Source\\Repos\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Helen\\Source\\Repos\\meganbagrosky\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj",
+        "projectUniqueName": "C:\\Users\\ghern\\Source\\Repos\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj",
         "projectName": "MainWindow",
-        "projectPath": "C:\\Users\\Helen\\Source\\Repos\\meganbagrosky\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj",
-        "packagesPath": "C:\\Users\\Helen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Helen\\Source\\Repos\\meganbagrosky\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\obj\\",
+        "projectPath": "C:\\Users\\ghern\\Source\\Repos\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj",
+        "packagesPath": "C:\\Users\\ghern\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ghern\\Source\\Repos\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Helen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ghern\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
