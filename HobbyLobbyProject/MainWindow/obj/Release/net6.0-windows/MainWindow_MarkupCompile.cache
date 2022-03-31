@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\megan\Source\Repos\meganbagrosky\MIS-3033---Group-Project\HobbyLobbyProject\MainWindow\obj\Release\net6.0-windows\
+C:\Users\ghern\source\repos\MIS-3033---Group-Project\HobbyLobbyProject\MainWindow\obj\Release\net6.0-windows\
 MainWindow
 none
 false
 TRACE;RELEASE;NET;NET6_0;NETCOREAPP
-C:\Users\megan\Source\Repos\meganbagrosky\MIS-3033---Group-Project\HobbyLobbyProject\MainWindow\App.xaml
-11407045341
+C:\Users\ghern\source\repos\MIS-3033---Group-Project\HobbyLobbyProject\MainWindow\App.xaml
+3733296064
 
-3-1233169557
-194-1708299761
-MainWindow.xaml;
+5-599215786
+1941142463650
+MainWindow.xaml;StoreView.xaml;TruckerView.xaml;
 
 True
 
