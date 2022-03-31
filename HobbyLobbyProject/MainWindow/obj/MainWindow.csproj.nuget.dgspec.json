@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\megan\\Source\\Repos\\meganbagrosky\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj": {}
+    "C:\\Users\\Helen\\Source\\Repos\\meganbagrosky\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj": {}
   },
   "projects": {
-    "C:\\Users\\megan\\Source\\Repos\\meganbagrosky\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj": {
+    "C:\\Users\\Helen\\Source\\Repos\\meganbagrosky\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\megan\\Source\\Repos\\meganbagrosky\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj",
+        "projectUniqueName": "C:\\Users\\Helen\\Source\\Repos\\meganbagrosky\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj",
         "projectName": "MainWindow",
-        "projectPath": "C:\\Users\\megan\\Source\\Repos\\meganbagrosky\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj",
-        "packagesPath": "C:\\Users\\megan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\megan\\Source\\Repos\\meganbagrosky\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\obj\\",
+        "projectPath": "C:\\Users\\Helen\\Source\\Repos\\meganbagrosky\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj",
+        "packagesPath": "C:\\Users\\Helen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Helen\\Source\\Repos\\meganbagrosky\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\megan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Helen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

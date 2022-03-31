@@ -22,6 +22,7 @@ namespace MainWindow
         public StoreView()
         {
             InitializeComponent();
+            // Test Run //
         }
     }
 }

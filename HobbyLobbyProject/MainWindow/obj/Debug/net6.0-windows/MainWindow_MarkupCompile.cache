@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\Helen\Source\Repos\meganbagrosky\MIS-3033---Group-Project\HobbyLobbyProject\MainWindow\obj\Release\net6.0-windows\
+C:\Users\Helen\Source\Repos\meganbagrosky\MIS-3033---Group-Project\HobbyLobbyProject\MainWindow\obj\Debug\net6.0-windows\
 MainWindow
 none
 false
-TRACE;RELEASE;NET;NET6_0;NETCOREAPP
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Helen\Source\Repos\meganbagrosky\MIS-3033---Group-Project\HobbyLobbyProject\MainWindow\App.xaml
 3733296064
 
