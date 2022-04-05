@@ -14,6 +14,9 @@
         <Label Content="   Pick a date for pickup:" HorizontalAlignment="Left" Margin="61,53,0,0" VerticalAlignment="Top" Height="34" Width="154" Background="#FFE7E7E7" FontFamily="Cambria"/>
         <ListBox x:Name="lbStoreEntries" Margin="444,109,10,30"/>
         <Label x:Name="label" Content="                       List of Store Entries:" HorizontalAlignment="Left" Margin="444,53,0,0" VerticalAlignment="Top" Height="34" Width="346" Background="White" FontSize="18" FontFamily="Cambria"/>
+        <TextBox HorizontalAlignment="Left" Margin="61,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214"/>
+        <Label Content="Your Assigned Truck/Trailer Number is:" HorizontalAlignment="Left" Margin="61,257,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.65,-0.268" Width="214" Background="White"/>
+        <Button Content="Generate Truck/Trailer Number:" HorizontalAlignment="Left" Margin="61,164,0,0" VerticalAlignment="Top" Height="53" Width="184"/>
 
     </Grid>
 </Window>
