@@ -25,5 +25,21 @@ namespace MainWindow
             InitializeComponent();
             //Action request
         }
+
+        private void btnStoreView_Click(object sender, RoutedEventArgs e)
+        {
+            StoreView storewnd = new StoreView();
+            storewnd.PopulateScreen();
+
+            storewnd.ShowDialog();
+        }
+
+        private void btnTransportView_Click(object sender, RoutedEventArgs e)
+        {
+            TruckerView truckerwnd = new TruckerView();
+            truckerwnd.PopulateScreen();
+
+            truckerwnd.ShowDialog();
+        }
     }
 }
