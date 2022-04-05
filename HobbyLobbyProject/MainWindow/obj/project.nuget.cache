@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "M582wFFvcmJO6fDLcHoRwYgNtey2JEnE4IeKc0uIbmUhBGGB9vBkIN0fYr4HtFdFPXYMF8AHCQioxm3fmAdU2g==",
+  "dgSpecHash": "XEU22kS8IAxj3PlwYysxEWT3N569XW7JGnuRA3fZfSXMPVZS1YtZ2gEp58eXawY0ozaGTQJ0dYbO7h9lzi0aNw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\megan\\Source\\Repos\\meganbagrosky\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\ghern\\Source\\Repos\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ghern\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
