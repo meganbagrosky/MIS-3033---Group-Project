@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="https://th.bing.com/th/id/R.2921be65dd2f84839888450460405012?rik=0nw2qBoyyMEWjQ&amp;riu=http%3a%2f%2fwww.blogos.org%2fgotquestions%2fimages%2f140706-hobby-lobby-birth-control.jpg&amp;ehk=5uvxM6om2GrpY1mBGeZx2fekpv3S3bdOKgb6pzHSTVI%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0"/>
+        </Grid.Background>
+        <Button x:Name="btnStoreView" Content="Store View" HorizontalAlignment="Left" Margin="164,167,0,0" VerticalAlignment="Top" Height="81" Width="135" FontSize="14" FontFamily="Cambria"/>
+        <Button x:Name="btnTransportView" Content="Transportation View" HorizontalAlignment="Left" Margin="502,167,0,0" VerticalAlignment="Top" Height="81" Width="135" FontSize="14" FontFamily="Cambria"/>
+        <Label Content="      Click the View you would like to enter: " HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top" Height="53" Width="473" Background="#FFDDDDDD" FontSize="24" FontFamily="Cambria"/>
 
     </Grid>
 </Window>

@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="TruckerView" Height="450" Width="800">
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="https://th.bing.com/th/id/OIP.64MTexHtaJZReCLUwn8RPQHaFQ?pid=ImgDet&amp;rs=1"/>
+        </Grid.Background>
+        <ComboBox x:Name="cboDate" HorizontalAlignment="Left" Margin="61,109,0,0" VerticalAlignment="Top" Width="154"/>
+        <Label Content="   Pick a date for pickup:" HorizontalAlignment="Left" Margin="61,53,0,0" VerticalAlignment="Top" Height="34" Width="154" Background="#FFE7E7E7"/>
+
     </Grid>
 </Window>
