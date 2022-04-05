@@ -11,7 +11,9 @@
             <ImageBrush ImageSource="https://th.bing.com/th/id/OIP.64MTexHtaJZReCLUwn8RPQHaFQ?pid=ImgDet&amp;rs=1"/>
         </Grid.Background>
         <ComboBox x:Name="cboDate" HorizontalAlignment="Left" Margin="61,109,0,0" VerticalAlignment="Top" Width="154"/>
-        <Label Content="   Pick a date for pickup:" HorizontalAlignment="Left" Margin="61,53,0,0" VerticalAlignment="Top" Height="34" Width="154" Background="#FFE7E7E7"/>
+        <Label Content="   Pick a date for pickup:" HorizontalAlignment="Left" Margin="61,53,0,0" VerticalAlignment="Top" Height="34" Width="154" Background="#FFE7E7E7" FontFamily="Cambria"/>
+        <ListBox x:Name="lbStoreEntries" Margin="444,109,10,30"/>
+        <Label x:Name="label" Content="                       List of Store Entries:" HorizontalAlignment="Left" Margin="444,53,0,0" VerticalAlignment="Top" Height="34" Width="346" Background="White" FontSize="18" FontFamily="Cambria"/>
 
     </Grid>
 </Window>
