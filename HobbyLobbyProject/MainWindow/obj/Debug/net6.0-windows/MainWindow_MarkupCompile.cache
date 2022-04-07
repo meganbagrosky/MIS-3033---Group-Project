@@ -1,19 +1,19 @@
 ﻿MainWindow
-
+1.0.0.0
 
 winexe
 C#
 .cs
-C:\Users\megan\Source\Repos\meganbagrosky\MIS-3033---Group-Project\HobbyLobbyProject\MainWindow\obj\Debug\net6.0-windows\
+C:\Users\ghern\Source\Repos\MIS-3033---Group-Project\HobbyLobbyProject\MainWindow\obj\Debug\net6.0-windows\
 MainWindow
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\megan\Source\Repos\meganbagrosky\MIS-3033---Group-Project\HobbyLobbyProject\MainWindow\App.xaml
+C:\Users\ghern\Source\Repos\MIS-3033---Group-Project\HobbyLobbyProject\MainWindow\App.xaml
 3733296064
 
-5-599215786
-194-1708299761
+8-1323559545
+1952019516769
 MainWindow.xaml;StoreView.xaml;TruckerView.xaml;
 
 True
