@@ -29,7 +29,7 @@ namespace MainWindow
         private void btnStoreView_Click(object sender, RoutedEventArgs e)
         {
             StoreView storewnd = new StoreView();
-            storewnd.PopulateScreen();
+            //storewnd.PopulateScreen();
 
             storewnd.ShowDialog();
         }

@@ -26,5 +26,9 @@ namespace MainWindow
             City = string.Empty;
             State = string.Empty;
         }
+        public override string ToString()
+        {
+            return $"{Store_Number} {Location} {City} {State}"; 
+        }
     }
 }

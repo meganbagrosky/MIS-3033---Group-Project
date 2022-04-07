@@ -77,7 +77,7 @@ namespace MainWindow {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MainWindow;V1.0.0.0;component/truckerview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MainWindow;component/truckerview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\TruckerView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
