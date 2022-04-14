@@ -1,0 +1,43 @@
+﻿@model MVC_Beginner.Models.RandomChuckJokeAPI
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron">
+    <h1>Chuck Norris Joke</h1>
+    <p>@Model.value</p>
+    <img src="@Model.icon_url"/>
+</div>
+
+@*<div>
+    <h4>RandomChuckJokeAPI</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.icon_url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.icon_url)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.url)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.value)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.value)
+        </dd>
+
+    </dl>
+</div>*@
+

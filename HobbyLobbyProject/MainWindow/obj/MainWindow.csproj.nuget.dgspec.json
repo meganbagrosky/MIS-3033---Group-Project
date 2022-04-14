@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ghern\\Source\\Repos\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj": {}
+    "C:\\Users\\ghern\\source\\repos\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ghern\\Source\\Repos\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj": {
+    "C:\\Users\\ghern\\source\\repos\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ghern\\Source\\Repos\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj",
+        "projectUniqueName": "C:\\Users\\ghern\\source\\repos\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj",
         "projectName": "MainWindow",
-        "projectPath": "C:\\Users\\ghern\\Source\\Repos\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj",
+        "projectPath": "C:\\Users\\ghern\\source\\repos\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\MainWindow.csproj",
         "packagesPath": "C:\\Users\\ghern\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ghern\\Source\\Repos\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\obj\\",
+        "outputPath": "C:\\Users\\ghern\\source\\repos\\MIS-3033---Group-Project\\HobbyLobbyProject\\MainWindow\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ghern\\AppData\\Roaming\\NuGet\\NuGet.Config",
