@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace HoobyLobbyProject
+namespace HobbyLobbyProject
 {
     public class FilterConfig
     {
