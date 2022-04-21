@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_128040_hobbylobbyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Pickup">
+          <Key>
+            <PropertyRef Name="PickupNumber" />
+          </Key>
+          <Property Name="PickupNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TruckNumber" Type="int" />
+          <Property Name="ScheduledDate" Type="datetime" />
+          <Property Name="PickupCapacity" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="RequestNumber" />
+          </Key>
+          <Property Name="RequestNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StoreNumber" Type="int" Nullable="false" />
+          <Property Name="PickupNumber" Type="int" />
+          <Property Name="ToteQuantity" Type="int" Nullable="false" />
+          <Property Name="CartonQuantity" Type="int" Nullable="false" />
+          <Property Name="LoadLockQuantity" Type="int" Nullable="false" />
+          <Property Name="Comments" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Stores">
+          <Key>
+            <PropertyRef Name="StoreNumber" />
+          </Key>
+          <Property Name="StoreNumber" Type="int" Nullable="false" />
+          <Property Name="Location" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="StreetAddress" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="State" Type="char" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Truck">
+          <Key>
+            <PropertyRef Name="TruckNumber" />
+          </Key>
+          <Property Name="TruckNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Capacity" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Pickup_Truck">
+          <End Role="Truck" Type="Self.Truck" Multiplicity="0..1" />
+          <End Role="Pickup" Type="Self.Pickup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Truck">
+              <PropertyRef Name="TruckNumber" />
+            </Principal>
+            <Dependent Role="Pickup">
+              <PropertyRef Name="TruckNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Pickup">
+          <End Role="Pickup" Type="Self.Pickup" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pickup">
+              <PropertyRef Name="PickupNumber" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="PickupNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Stores">
+          <End Role="Stores" Type="Self.Stores" Multiplicity="1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stores">
+              <PropertyRef Name="StoreNumber" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="StoreNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_128040_hobbylobbyModelStoreContainer">
+          <EntitySet Name="Pickup" EntityType="Self.Pickup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Request" EntityType="Self.Request" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stores" EntityType="Self.Stores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Truck" EntityType="Self.Truck" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Pickup_Truck" Association="Self.FK_Pickup_Truck">
+            <End Role="Truck" EntitySet="Truck" />
+            <End Role="Pickup" EntitySet="Pickup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Pickup" Association="Self.FK_Request_Pickup">
+            <End Role="Pickup" EntitySet="Pickup" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Stores" Association="Self.FK_Request_Stores">
+            <End Role="Stores" EntitySet="Stores" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_128040_hobbylobbyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Pickup">
+          <Key>
+            <PropertyRef Name="PickupNumber" />
+          </Key>
+          <Property Name="PickupNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TruckNumber" Type="Int32" />
+          <Property Name="ScheduledDate" Type="DateTime" Precision="3" />
+          <Property Name="PickupCapacity" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Truck" Relationship="Self.FK_Pickup_Truck" FromRole="Pickup" ToRole="Truck" />
+          <NavigationProperty Name="Requests" Relationship="Self.FK_Request_Pickup" FromRole="Pickup" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="RequestNumber" />
+          </Key>
+          <Property Name="RequestNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreNumber" Type="Int32" Nullable="false" />
+          <Property Name="PickupNumber" Type="Int32" />
+          <Property Name="ToteQuantity" Type="Int32" Nullable="false" />
+          <Property Name="CartonQuantity" Type="Int32" Nullable="false" />
+          <Property Name="LoadLockQuantity" Type="Int32" Nullable="false" />
+          <Property Name="Comments" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Pickup" Relationship="Self.FK_Request_Pickup" FromRole="Request" ToRole="Pickup" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_Request_Stores" FromRole="Request" ToRole="Stores" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="StoreNumber" />
+          </Key>
+          <Property Name="StoreNumber" Type="Int32" Nullable="false" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StreetAddress" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="State" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Requests" Relationship="Self.FK_Request_Stores" FromRole="Stores" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="Truck">
+          <Key>
+            <PropertyRef Name="TruckNumber" />
+          </Key>
+          <Property Name="TruckNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Capacity" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Pickups" Relationship="Self.FK_Pickup_Truck" FromRole="Truck" ToRole="Pickup" />
+        </EntityType>
+        <Association Name="FK_Pickup_Truck">
+          <End Role="Truck" Type="Self.Truck" Multiplicity="0..1" />
+          <End Role="Pickup" Type="Self.Pickup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Truck">
+              <PropertyRef Name="TruckNumber" />
+            </Principal>
+            <Dependent Role="Pickup">
+              <PropertyRef Name="TruckNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Pickup">
+          <End Role="Pickup" Type="Self.Pickup" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pickup">
+              <PropertyRef Name="PickupNumber" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="PickupNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Stores">
+          <End Role="Stores" Type="Self.Store" Multiplicity="1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stores">
+              <PropertyRef Name="StoreNumber" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="StoreNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_128040_hobbylobbyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Pickups" EntityType="Self.Pickup" />
+          <EntitySet Name="Requests" EntityType="Self.Request" />
+          <EntitySet Name="Stores" EntityType="Self.Store" />
+          <EntitySet Name="Trucks" EntityType="Self.Truck" />
+          <AssociationSet Name="FK_Pickup_Truck" Association="Self.FK_Pickup_Truck">
+            <End Role="Truck" EntitySet="Trucks" />
+            <End Role="Pickup" EntitySet="Pickups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Pickup" Association="Self.FK_Request_Pickup">
+            <End Role="Pickup" EntitySet="Pickups" />
+            <End Role="Request" EntitySet="Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Stores" Association="Self.FK_Request_Stores">
+            <End Role="Stores" EntitySet="Stores" />
+            <End Role="Request" EntitySet="Requests" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_128040_hobbylobbyModelStoreContainer" CdmEntityContainer="DB_128040_hobbylobbyEntities">
+          <EntitySetMapping Name="Pickups">
+            <EntityTypeMapping TypeName="DB_128040_hobbylobbyModel.Pickup">
+              <MappingFragment StoreEntitySet="Pickup">
+                <ScalarProperty Name="PickupNumber" ColumnName="PickupNumber" />
+                <ScalarProperty Name="TruckNumber" ColumnName="TruckNumber" />
+                <ScalarProperty Name="ScheduledDate" ColumnName="ScheduledDate" />
+                <ScalarProperty Name="PickupCapacity" ColumnName="PickupCapacity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Requests">
+            <EntityTypeMapping TypeName="DB_128040_hobbylobbyModel.Request">
+              <MappingFragment StoreEntitySet="Request">
+                <ScalarProperty Name="RequestNumber" ColumnName="RequestNumber" />
+                <ScalarProperty Name="StoreNumber" ColumnName="StoreNumber" />
+                <ScalarProperty Name="PickupNumber" ColumnName="PickupNumber" />
+                <ScalarProperty Name="ToteQuantity" ColumnName="ToteQuantity" />
+                <ScalarProperty Name="CartonQuantity" ColumnName="CartonQuantity" />
+                <ScalarProperty Name="LoadLockQuantity" ColumnName="LoadLockQuantity" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stores">
+            <EntityTypeMapping TypeName="DB_128040_hobbylobbyModel.Store">
+              <MappingFragment StoreEntitySet="Stores">
+                <ScalarProperty Name="StoreNumber" ColumnName="StoreNumber" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trucks">
+            <EntityTypeMapping TypeName="DB_128040_hobbylobbyModel.Truck">
+              <MappingFragment StoreEntitySet="Truck">
+                <ScalarProperty Name="TruckNumber" ColumnName="TruckNumber" />
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
