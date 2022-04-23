@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Enter Password</h2>
+<div class="row">
+    <div class="col-lg-3">
+        <div class="input-group">
+            <input type="text" id="passwordText" class="form-control" placeholder="Password..." />
+            <span class="input-group-btn">
+                <button class="btn btn-default" onclick="myFunction()" type="button">Go!</button>
+            </span>
+        </div>@*< !-- /input-group -->*@
+    </div>@*< !-- /.col-lg-6 -->*@
+</div>
+<p id="validation"></p>
+<script>
+    function myFunction() {
+        var inputVal = document.getElementById("passwordText").value;
+        var valid;
+        if (inputVal == "1") {
+            location.href = 'https://localhost:44376/StoreView/Index';
+            valid = "Correct"
+        }
+        else {
+            valid ="Incorrect Password"
+        }
+        document.getElementById("validation").innerHTML = valid;
+    }
+</script>
+
