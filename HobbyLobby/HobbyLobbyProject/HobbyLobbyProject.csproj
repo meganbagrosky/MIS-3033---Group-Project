@@ -171,11 +171,11 @@
     <Content Include="Views\TrasportationView\Index.cshtml" />
     <Content Include="Views\StorePassword\Index.cshtml" />
     <Content Include="Views\StoreView\Index.cshtml" />
+    <Content Include="Views\TransPassword\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\TransPassword\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
