@@ -129,7 +129,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StorePasswordController.cs" />
     <Compile Include="Controllers\StoresController.cs" />
+    <Compile Include="Controllers\TransPasswordController.cs" />
     <Compile Include="Controllers\TrucksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -218,6 +220,8 @@
     <Content Include="Views\Trucks\Truck.cshtml" />
     <Content Include="Views\Stores\Details.cshtml" />
     <Content Include="Views\Stores\Index.cshtml" />
+    <Content Include="Views\StorePassword\Index.cshtml" />
+    <Content Include="Views\TransPassword\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

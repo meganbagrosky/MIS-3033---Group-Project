@@ -15,7 +15,7 @@ namespace HobbyLobby.Controllers
         private DB_128040_hobbylobbyEntities db = new DB_128040_hobbylobbyEntities();
 
         // GET: Trucks
-        public ActionResult Index()
+        public ActionResult Truck()
         {
             return View(db.Trucks.ToList());
         }
