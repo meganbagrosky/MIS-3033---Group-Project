@@ -216,10 +216,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Trucks\Truck.cshtml" />
-    <Content Include="Views\Stores\Create.cshtml" />
-    <Content Include="Views\Stores\Delete.cshtml" />
     <Content Include="Views\Stores\Details.cshtml" />
-    <Content Include="Views\Stores\Edit.cshtml" />
     <Content Include="Views\Stores\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
