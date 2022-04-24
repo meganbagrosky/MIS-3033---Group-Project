@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RequestFormController.cs" />
     <Compile Include="Controllers\StorePasswordController.cs" />
     <Compile Include="Controllers\StoresController.cs" />
     <Compile Include="Controllers\TransPasswordController.cs" />
@@ -224,6 +225,11 @@
     <Content Include="Views\Stores\Index.cshtml" />
     <Content Include="Views\StorePassword\Index.cshtml" />
     <Content Include="Views\TransPassword\Index.cshtml" />
+    <Content Include="Views\RequestForm\Create.cshtml" />
+    <Content Include="Views\RequestForm\Delete.cshtml" />
+    <Content Include="Views\RequestForm\Details.cshtml" />
+    <Content Include="Views\RequestForm\Edit.cshtml" />
+    <Content Include="Views\RequestForm\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

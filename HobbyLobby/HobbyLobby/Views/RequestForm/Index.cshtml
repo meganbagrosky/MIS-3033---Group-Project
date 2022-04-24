@@ -1,0 +1,79 @@
+﻿@model IEnumerable<HobbyLobby.Models.Request>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2 style="color:orangered">Form Request</h2>
+<div>
+    <div class="jumbotron" style="background-color:navy">
+        <img src="https://1000logos.net/wp-content/uploads/2020/09/Hobby-Lobby.png" class="mx-auto d-block" style="width:50%" />
+        <br />
+        <p class="lead" style="color: white">On this page, you will be able to see all request forms. Please choose to create a request form, delete a form, edit a form, or see details of a form</p>
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th style="color:orangered">
+            @Html.DisplayNameFor(model => model.ToteQuantity)
+        </th>
+        <th style="color:orangered">
+            @Html.DisplayNameFor(model => model.CartonQuantity)
+        </th>
+        <th style="color:orangered">
+            @Html.DisplayNameFor(model => model.LoadLockQuantity)
+        </th>
+        <th style="color:orangered">
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        <th style="color:orangered">
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </th>
+        <th style="color:orangered">
+            @Html.DisplayNameFor(model => model.Pickup.PickupNumber)
+        </th>
+        <th style="color:orangered">
+            @Html.DisplayNameFor(model => model.Store.Location)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToteQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CartonQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoadLockQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pickup.PickupNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Store.Location)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.RequestNumber }) |
+                @Html.ActionLink("Details", "Details", new { id = item.RequestNumber }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.RequestNumber })
+            </td>
+        </tr>
+    }
+
+</table>
+

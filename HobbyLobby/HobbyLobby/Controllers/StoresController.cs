@@ -58,37 +58,6 @@ namespace HobbyLobby.Controllers
             return View(store);
         }
 
-        // GET: Stores/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Store store = db.Stores.Find(id);
-            if (store == null)
-            {
-                return HttpNotFound();
-            }
-            return View(store);
-        }
-
-        // POST: Stores/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StoreNumber,Location,StreetAddress,City,State")] Store store)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(store).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(store);
-        }
-
         // GET: Stores/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -125,3 +94,5 @@ namespace HobbyLobby.Controllers
         }
     }
 }
+
+

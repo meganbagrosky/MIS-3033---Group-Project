@@ -1,0 +1,79 @@
+﻿@model HobbyLobby.Models.Request
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="color:orangered">Request Form Details</h2>
+<div>
+    <div class="jumbotron" style="background-color:navy">
+        <img src="https://1000logos.net/wp-content/uploads/2020/09/Hobby-Lobby.png" class="mx-auto d-block" style="width:50%" />
+
+    </div>
+</div>
+<div>
+    <h4 style="color:orangered">Request</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="color:orangered">
+            @Html.DisplayNameFor(model => model.ToteQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToteQuantity)
+        </dd>
+
+        <dt style="color:orangered">
+            @Html.DisplayNameFor(model => model.CartonQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CartonQuantity)
+        </dd>
+
+        <dt style="color:orangered">
+            @Html.DisplayNameFor(model => model.LoadLockQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoadLockQuantity)
+        </dd>
+
+        <dt style="color:orangered">
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+        <dt style="color:orangered">
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+
+        <dt style="color:orangered">
+            @Html.DisplayNameFor(model => model.Pickup.PickupNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pickup.PickupNumber)
+        </dd>
+
+        <dt style="color:orangered">
+            @Html.DisplayNameFor(model => model.Store.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Store.Location)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
