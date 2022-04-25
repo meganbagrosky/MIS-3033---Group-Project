@@ -53,5 +53,6 @@ textarea {
 }
 
 #MainNav {
-    position: relative
+    position: relative;
+    height: 90px;
 }
