@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PickupController.cs" />
     <Compile Include="Controllers\RequestFormController.cs" />
     <Compile Include="Controllers\StorePasswordController.cs" />
     <Compile Include="Controllers\StoresController.cs" />
@@ -230,6 +231,12 @@
     <Content Include="Views\RequestForm\Details.cshtml" />
     <Content Include="Views\RequestForm\Edit.cshtml" />
     <Content Include="Views\RequestForm\Index.cshtml" />
+    <Content Include="Views\Pickup\Create.cshtml" />
+    <Content Include="Views\Pickup\Delete.cshtml" />
+    <Content Include="Views\Pickup\Details.cshtml" />
+    <Content Include="Views\Pickup\Edit.cshtml" />
+    <Content Include="Views\Pickup\Index.cshtml" />
+    <Content Include="Views\Pickup\SubmittedStoreEntries.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

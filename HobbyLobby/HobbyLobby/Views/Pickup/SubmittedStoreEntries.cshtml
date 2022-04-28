@@ -1,0 +1,76 @@
+﻿@model IEnumerable<HobbyLobby.Models.Pickup>
+
+@{
+    ViewBag.Title = "TransportationView";
+}
+
+<h2>Transporation View</h2>
+
+
+<a id="backbutton" class="btn btn-default" href="https://localhost:44378/Home/Index" role="button"><img src="~/Images/backbutton2.png" height="50" width="50"></a>
+
+<div style="color:antiquewhite">
+    <div class="jumbotron" style="background-color: navy">
+        <h1 style="text-align:center">Hobby Lobby Transportation</h1>
+        <p class="lead" style="color: antiquewhite">On this page, you will be able to see store entries, select clean-up dates, and see your truck/trailer number.</p>
+    </div>
+
+    @*<div class="row" style="background-color: darkorange">
+            <div class="col-md-4" style="color: antiquewhite">
+                <h2>Store Entries</h2>
+                <p>
+                    View submitted store entries below:
+                </p>
+
+
+            </div>
+            <div class="col-md-4" style="color: antiquewhite">
+                <h2>Clean-Up Date Selection</h2>
+                <p>Select a clean-up date below:</p>
+
+
+
+
+            </div>
+            <div class="col-md-4" style="color: antiquewhite">
+                <h2>Truck/Trailer Number</h2>
+                <p>Your truck/trailer number is listed below:</p>
+                <p>Truck/Trailer Number Assigned: {}</p>
+            </div>
+        </div>*@
+</div>
+<table class="table" style="background-color: darkorange">
+    <tr style="color: antiquewhite">
+        <th>
+            @Html.DisplayNameFor(model => model.Truck.TruckNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PickupCapacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScheduledDate)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TruckNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PickupCapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScheduledDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PickupNumber }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PickupNumber }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PickupNumber })
+            </td>
+        </tr>
+    }
+
+</table>
+
