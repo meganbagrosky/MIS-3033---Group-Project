@@ -18,6 +18,8 @@ namespace HobbyLobby.Controllers
         public ActionResult Index()
         {
             var pickups = db.Pickups.Include(p => p.Truck);
+            ViewBag.Request = new SelectList(db.Stores, "StoreLocation", "StoreLocation");
+            var requests = db.Requests.Include(r => r.Pickup).Include(r => r.Store);
             return View(pickups.ToList());
         }
 
