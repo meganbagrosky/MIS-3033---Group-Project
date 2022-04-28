@@ -1,41 +1,33 @@
-﻿
+﻿@model IEnumerable<HobbyLobby.Models.Truck>
+
 @{
-    ViewBag.Title = "TransportationView";
+    ViewBag.Title = "Truck";
 }
 
-<h2>Transporation View</h2>
+<h2>Truck</h2>
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </th>
+        <th></th>
+    </tr>
 
-<a id="backbutton" class="btn btn-default" href="https://localhost:44378/Home/Index" role="button"><img src="~/Images/backbutton2.png" height="50" width="50"></a>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Capacity)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TruckNumber }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TruckNumber }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TruckNumber })
+        </td>
+    </tr>
+}
 
-<div style="color:antiquewhite">
-    <div class="jumbotron" style="background-color: navy">
-        <h1 style="text-align:center">Hobby Lobby Transportation</h1>
-        <p class="lead" style="color: antiquewhite">On this page, you will be able to see store entries, select clean-up dates, and see your truck/trailer number.</p>
-    </div>
-
-    <div class="row" style="background-color: darkorange">
-        <div class="col-md-4" style="color: antiquewhite">
-            <h2>Store Entries</h2>
-            <p>
-                View submitted store entries below:
-            </p>
-
-
-        </div>
-            <div class="col-md-4" style="color: antiquewhite">
-                <h2>Clean-Up Date Selection</h2>
-                <p>Select a clean-up date below:</p>
-
-
-
-
-            </div>
-            <div class="col-md-4" style="color: antiquewhite">
-                <h2>Truck/Trailer Number</h2>
-                <p>Your truck/trailer number is listed below:</p>
-                <p>Truck/Trailer Number Assigned: {}</p>
-            </div>
-        </div>
-</div>
-
+</table>
