@@ -23,16 +23,21 @@ namespace HobbyLobby.Controllers
         // GET: Stores/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
+            List<Request> request = new List<Request>();
+            foreach (var r in db.Requests)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                if (r.StoreNumber == id)
+                {
+                    request.Add(r);
+                }
             }
-            Store store = db.Stores.Find(id);
-            if (store == null)
+            var tables = new StoreRequestView
             {
-                return HttpNotFound();
-            }
-            return View(store);
+                RequestClass = request,
+                StoreClass = db.Stores.Find(id),
+                RequestName = db.Requests.Find(id)
+            };
+            return View(tables);
         }
 
         // GET: Stores/Create

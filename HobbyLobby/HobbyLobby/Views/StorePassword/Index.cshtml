@@ -1,6 +1,7 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
+<a id="backbutton" class="btn btn-default" href="https://localhost:44362/Home/Index" role="button"><img src="~/Images/backbutton2.png" height="50" width="50"></a>
 
 <h2>Enter Password</h2>
 <div class="row">
@@ -14,16 +15,20 @@
     </div>@*< !-- /.col-lg-6 -->*@
 </div>
 <p id="validation"></p>
+
 <script>
     function myFunction() {
         var inputVal = document.getElementById("passwordText").value;
         var valid;
-        if (inputVal == "1") {
-            location.href = 'https://localhost:44378/StoreView/Index';
-            /*valid = "Correct"*/
+
+        /* location.href = 'https://localhost:44362/Stores/Details/' + inputVal;*/
+
+        if (inputVal < 1000) {
+            location.href = 'https://localhost:44362/Stores/Details/' + inputVal;
+            valid = "Please wait while we redirect you. Thank You!"
         }
         else {
-            valid ="Incorrect Password"
+            valid = "Incorrect Password"
         }
         document.getElementById("validation").innerHTML = valid;
     }

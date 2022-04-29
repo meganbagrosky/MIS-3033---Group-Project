@@ -1,50 +1,141 @@
-﻿@model HobbyLobby.Models.Store
-
+﻿@model HobbyLobby.Models.StoreRequestView
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<a id="backbutton" class="btn btn-default" href="https://localhost:44362/Home/Index" role="button"><img src="~/Images/backbutton2.png" height="50" width="50"></a>
+
+
+<h2 style="color:orangered">Store View</h2>
+<div>
+    <div class="jumbotron" style="background-color:navy">
+        <img src="https://1000logos.net/wp-content/uploads/2020/09/Hobby-Lobby.png" class="mx-auto d-block" style="width:50%" />
+        <br />
+        <p class="lead" style="color: white">On this page, you will be able to see your store and requests.</p>
+    </div>
+</div>
 
 <div>
     <h4>Store</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Location)
+            @Html.DisplayNameFor(model => model.StoreClass.Location)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Location)
+            @Html.DisplayFor(model => model.StoreClass.Location)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.StreetAddress)
+            @Html.DisplayNameFor(model => model.StoreClass.StreetAddress)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.StreetAddress)
+            @Html.DisplayFor(model => model.StoreClass.StreetAddress)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.City)
+            @Html.DisplayNameFor(model => model.StoreClass.City)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.City)
+            @Html.DisplayFor(model => model.StoreClass.City)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.State)
+            @Html.DisplayNameFor(model => model.StoreClass.State)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.State)
+            @Html.DisplayFor(model => model.StoreClass.State)
         </dd>
-
+        <dt>
+            @Html.DisplayNameFor(model => model.StoreClass.StoreNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StoreClass.StoreNumber)
+        </dd>
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.StoreNumber }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+<div id="AbsDiv">
+    <a class="btn btn-primary btn-sm" id="NewRequest" href="https://localhost:44362/RequestForm/Create" role="button" style="margin-block:10px;">Create New request</a>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestName.ToteQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestName.CartonQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestName.LoadLockQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestName.Comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestName.CreationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestName.Pickup.PickupNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestName.Store.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestName.StoreNumber)
+        </th>
+        <th></th>
+    </tr>
+    <div>
+        @if (Model.RequestClass.Count() == 0)
+        {
+            <div>
+                <p style="color:red">
+                    No requests have been made. To create a request press create new.
+                </p>
+            </div>
+        }
+        else
+        {
+            foreach (var item in Model.RequestClass)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ToteQuantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CartonQuantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoadLockQuantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comments)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pickup.PickupNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Store.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StoreNumber)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.RequestNumber }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.RequestNumber }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.RequestNumber })*@
+                </td>
+            </tr>
+        }
+    }
+        </div>
+    </table>

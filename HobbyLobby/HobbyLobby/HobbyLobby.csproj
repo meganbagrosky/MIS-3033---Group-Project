@@ -162,6 +162,7 @@
     <Compile Include="Models\Store.cs">
       <DependentUpon>HobbyLobbyDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\StoreRequestView.cs" />
     <Compile Include="Models\Truck.cs">
       <DependentUpon>HobbyLobbyDatabase.tt</DependentUpon>
     </Compile>

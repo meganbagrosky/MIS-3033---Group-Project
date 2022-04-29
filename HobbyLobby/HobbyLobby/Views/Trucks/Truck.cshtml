@@ -4,6 +4,8 @@
     ViewBag.Title = "Truck";
 }
 
+<a id="backbutton" class="btn btn-default" href="https://localhost:44362/Home/Index" role="button"><img src="~/Images/backbutton2.png" height="50" width="50"></a>
+
 <h2>Truck</h2>
 
 <p>
@@ -17,17 +19,18 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Capacity)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TruckNumber }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TruckNumber }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TruckNumber })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Capacity)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TruckNumber }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TruckNumber }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TruckNumber })
+            </td>
+        </tr>
+    }
 
 </table>
