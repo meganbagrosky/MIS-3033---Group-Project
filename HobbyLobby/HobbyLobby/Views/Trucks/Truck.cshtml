@@ -16,21 +16,27 @@
         <th>
             @Html.DisplayNameFor(model => model.Capacity)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TruckNumber)
+        </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Capacity)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.TruckNumber }) |
-                @Html.ActionLink("Details", "Details", new { id = item.TruckNumber }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.TruckNumber })
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Capacity)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TruckNumber)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.TruckNumber }) |
+        @Html.ActionLink("Details", "Details", new { id = item.TruckNumber }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.TruckNumber })
+    </td>
+</tr>
     }
 
 </table>

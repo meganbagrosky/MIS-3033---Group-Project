@@ -20,43 +20,43 @@
             <p>
                 View submitted store entries below:
 
-                <table class="table">
+                @*@<table class="table">
+        <tr>
+            <th style="color:orangered">
+                Need to figure out how to pull the store location from a request
+                @Html.DisplayNameFor(model => model.Location)
+                </th>
+                <th style="color:orangered">
+                    @Html.DisplayNameFor(model => model.PickupCapacity)
+                </th>
+                <th style="color:orangered">
+                    @Html.DisplayNameFor(model => model.ScheduledDate)
+                </th>
+                <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
                     <tr>
-                        <th style="color:orangered">
-                            @*Need to figure out how to pull the store location from a request*@
-                            @Html.DisplayNameFor(model => model.Location)
-                        </th>
-                        <th style="color:orangered">
-                            @Html.DisplayNameFor(model => model.PickupCapacity)
-                        </th>
-                        <th style="color:orangered">
-                            @Html.DisplayNameFor(model => model.ScheduledDate)
-                        </th>
-                        <th></th>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ScheduledDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PickupCapacity)
+                        </td>
+                        <td>
+                           *This needs to be fixed
+                            @Html.DisplayFor(modelItem => item.Location)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.PickupNumber }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.PickupNumber }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.PickupNumber })
+                        </td>
                     </tr>
+                }
 
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ScheduledDate)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.PickupCapacity)
-                            </td>
-                            <td>
-                                @*This needs to be fixed*@
-                                @Html.DisplayFor(modelItem => item.Location)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.PickupNumber }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.PickupNumber }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.PickupNumber })
-                            </td>
-                        </tr>
-                    }
-
-                </table>
+                </table>*@
             </p>
 
         </div>

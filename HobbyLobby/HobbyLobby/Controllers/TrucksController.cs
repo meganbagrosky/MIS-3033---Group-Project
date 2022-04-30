@@ -20,6 +20,11 @@ namespace HobbyLobby.Controllers
             return View(db.Trucks.ToList());
         }
 
+        public ActionResult Index()
+        {
+            return View(db.Trucks.ToList());
+        }
+
         // GET: Trucks/Details/5
         public ActionResult Details(int? id)
         {

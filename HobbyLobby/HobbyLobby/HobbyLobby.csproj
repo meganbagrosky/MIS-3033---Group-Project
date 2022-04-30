@@ -238,6 +238,10 @@
     <Content Include="Views\Pickup\Index.cshtml" />
     <Content Include="Views\Trucks\Truck.cshtml" />
     <Content Include="Views\Pickup\PickupList.cshtml" />
+    <Content Include="Views\Trucks\Delete.cshtml" />
+    <Content Include="Views\Trucks\Edit.cshtml" />
+    <Content Include="Views\Trucks\Create.cshtml" />
+    <Content Include="Views\Trucks\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
