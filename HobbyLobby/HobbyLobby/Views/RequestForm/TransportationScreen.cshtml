@@ -76,9 +76,9 @@
                         @Html.DisplayFor(modelItem => item.Store.Location)
                     </td>
                     <td>
-                        @* @Html.ActionLink("Assign Truck Number", "Edit", new { id = item.PickupNumber }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.PickupNumber }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.PickupNumber })*@
+                        <a class="btn btn-primary" href="https://localhost:44362/Trucks/Truck" role="button" style="text-align:center;margin-right:10px;">Assign a Truck Number</a>
+                        @* @Html.ActionLink("Details", "Truck", new { id = item.PickupNumber }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.PickupNumber })*@
                     </td>
                 </tr>
             }
