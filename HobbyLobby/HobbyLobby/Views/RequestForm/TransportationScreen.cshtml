@@ -1,4 +1,4 @@
-﻿@model IEnumerable<HobbyLobby.Models.Pickup>
+﻿@model IEnumerable<HobbyLobby.Models.Request>
 
 @{
     ViewBag.Title = "TransportationView";
@@ -23,7 +23,8 @@
     <div class="col-md-4" style="color: antiquewhite">
         <h2>Store Entries</h2>
         <p>
-            View submitted store entries below:</p>
+            View submitted store entries below:
+        </p>
         <table class="table">
             <tr>
                 <th style="color:orangered">
@@ -75,13 +76,13 @@
                         @Html.DisplayFor(modelItem => item.Store.Location)
                     </td>
                     <td>
-                        @Html.ActionLink("Assign Truck Number", "Edit", new { id = item.TruckNumber }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.TruckNumber }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.TruckNumber })
+                        @* @Html.ActionLink("Assign Truck Number", "Edit", new { id = item.PickupNumber }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.PickupNumber }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.PickupNumber })*@
                     </td>
                 </tr>
             }
 
         </table>
-        </div>
     </div>
+</div>

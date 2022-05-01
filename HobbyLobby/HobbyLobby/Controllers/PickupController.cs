@@ -51,8 +51,7 @@ namespace HobbyLobby.Controllers
         {
             var pickups = db.Pickups.Include(p => p.Truck);
             var requests = db.Pickups.Include(r => r.Requests);
-            // var store = db.Pickups.Include(s => s.Store);
-            return View(pickups.ToList());
+            return View(requests.ToList());
         }
 
         // POST: Pickup/Create

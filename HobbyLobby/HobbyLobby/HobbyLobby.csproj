@@ -242,6 +242,7 @@
     <Content Include="Views\Trucks\Create.cshtml" />
     <Content Include="Views\Trucks\Details.cshtml" />
     <Content Include="Views\Pickup\PickupList.cshtml" />
+    <Content Include="Views\RequestForm\TransportationScreen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

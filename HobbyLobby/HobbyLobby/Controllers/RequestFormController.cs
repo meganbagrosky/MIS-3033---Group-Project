@@ -21,6 +21,12 @@ namespace HobbyLobby.Controllers
             return View(requests.ToList());
         }
 
+        public ActionResult TransportationScreen()
+        {
+            var requests = db.Requests.Include(r => r.Pickup).Include(r => r.Store);
+            return View(requests.ToList());
+        }
+
         // GET: RequestForm/Details/5
         public ActionResult Details(int? id)
         {
