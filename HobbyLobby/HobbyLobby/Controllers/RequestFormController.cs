@@ -45,7 +45,7 @@ namespace HobbyLobby.Controllers
         // GET: RequestForm/Create
         public ActionResult Create()
         {
-            ViewBag.PickupNumber = new SelectList(db.Pickups, "PickupNumber", "PickupNumber");
+            ViewBag.PickupNumber = new SelectList(db.Pickups, "PickupNumber", "PickupCapacity");
             ViewBag.StoreNumber = new SelectList(db.Stores, "StoreNumber", "Location");
             return View();
         }
@@ -64,7 +64,7 @@ namespace HobbyLobby.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.PickupNumber = new SelectList(db.Pickups, "PickupNumber", "PickupNumber", request.PickupNumber);
+            ViewBag.PickupNumber = new SelectList(db.Pickups, "PickupNumber", "PickupCapacity", request.PickupNumber);
             ViewBag.StoreNumber = new SelectList(db.Stores, "StoreNumber", "Location", request.StoreNumber);
             return View(request);
         }

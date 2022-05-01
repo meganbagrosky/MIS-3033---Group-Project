@@ -28,59 +28,35 @@
         <table class="table">
             <tr>
                 <th style="color:orangered">
-                    @Html.DisplayNameFor(model => model.ToteQuantity)
-                </th>
-                <th style="color:orangered">
-                    @Html.DisplayNameFor(model => model.CartonQuantity)
-                </th>
-                <th style="color:orangered">
-                    @Html.DisplayNameFor(model => model.LoadLockQuantity)
-                </th>
-                <th style="color:orangered">
-                    @Html.DisplayNameFor(model => model.Comments)
-                </th>
-                <th style="color:orangered">
                     @Html.DisplayNameFor(model => model.CreationDate)
                 </th>
                 <th style="color:orangered">
-                    @Html.DisplayNameFor(model => model.Pickup.PickupNumber)
+                    @Html.DisplayNameFor(model => model.Store.Location)
                 </th>
                 <th style="color:orangered">
-                    @Html.DisplayNameFor(model => model.Store.Location)
+                    @Html.DisplayNameFor(model => model.Pickup.PickupCapacity)
                 </th>
                 <th></th>
             </tr>
 
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ToteQuantity)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CartonQuantity)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.LoadLockQuantity)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Comments)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CreationDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Pickup.PickupNumber)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Store.Location)
-                    </td>
-                    <td>
-                        <a class="btn btn-primary" href="https://localhost:44362/Trucks/Truck" role="button" style="text-align:center;margin-right:10px;">Assign a Truck Number</a>
-                        @* @Html.ActionLink("Details", "Truck", new { id = item.PickupNumber }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.PickupNumber })*@
-                    </td>
-                </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Store.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pickup.PickupCapacity)
+            </td>
+            <td>
+                <a class="btn btn-primary" href="https://localhost:44362/Pickup/Create" role="button" style="text-align:center;margin-right:10px;">Assign a Truck Number</a>
+                @* @Html.ActionLink("Details", "Truck", new { id = item.PickupNumber }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.PickupNumber })*@
+            </td>
+        </tr>
             }
 
         </table>

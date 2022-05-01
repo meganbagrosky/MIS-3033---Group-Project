@@ -35,7 +35,7 @@
             @Html.DisplayNameFor(model => model.CreationDate)
         </th>
         <th style="color:orangered">
-            @Html.DisplayNameFor(model => model.Pickup.PickupNumber)
+            @Html.DisplayNameFor(model => model.Pickup.PickupCapacity)
         </th>
         <th style="color:orangered">
             @Html.DisplayNameFor(model => model.Store.Location)
@@ -62,7 +62,7 @@
                 @Html.DisplayFor(modelItem => item.CreationDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Pickup.PickupNumber)
+                @Html.DisplayFor(modelItem => item.Pickup.PickupCapacity)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Store.Location)

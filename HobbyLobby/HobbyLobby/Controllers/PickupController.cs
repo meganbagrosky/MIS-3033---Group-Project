@@ -42,7 +42,7 @@ namespace HobbyLobby.Controllers
         public ActionResult Create()
         {
             ViewBag.TruckNumber = new SelectList(db.Trucks, "TruckNumber", "TruckNumber");
-            ViewBag.Request = new SelectList(db.Requests, "PickupNumber", "PickupNumber");
+            ViewBag.Request = new SelectList(db.Requests, "CreationDate", "CreationDate");
             ViewBag.Location = new SelectList(db.Stores, "Location", "Location");
             return View();
         }
