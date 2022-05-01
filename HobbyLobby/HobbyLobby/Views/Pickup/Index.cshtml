@@ -3,75 +3,57 @@
     ViewBag.Title = "TransportationView";
 }
 
-<h2>Transporation View</h2>
 
 
-<a id="backbutton" class="btn btn-default" href="https://localhost:44378/Home/Index" role="button"><img src="~/Images/backbutton2.png" height="50" width="50"></a>
+<a id="backbutton" class="btn btn-default" href="https://localhost:44362/Home/Index" role="button"><img src="~/Images/backbutton2.png" height="50" width="50"></a>
 
-<div style="color:antiquewhite">
-    <div class="jumbotron" style="background-color: navy">
-        <h1 style="text-align:center">Hobby Lobby Transportation</h1>
-        <p class="lead" style="color: antiquewhite">All store entries are listed here, as well as clean-up date selection and truck/trailer number assignments.</p>
+<h2 style="color:orangered">Hobby Lobby Transportation</h2>
+<div>
+    <div class="jumbotron" style="background-color:navy">
+        <img src="https://1000logos.net/wp-content/uploads/2020/09/Hobby-Lobby.png" class="mx-auto d-block" style="width:50%" />
+        <br />
+        <p class="lead" style="color: white">On this page, you will be able to see store entries, select clean-up dates, and see your truck/trailer number</p>
     </div>
+</div>
 
-    <div class="row" style="background-color: darkorange">
-        <div class="col-md-4" style="color: antiquewhite">
-            <h2>Store Entries</h2>
-            <p>
-                View submitted store entries below:
-
-                @*@<table class="table">
-        <tr>
-            <th style="color:orangered">
-                Need to figure out how to pull the store location from a request
-                @Html.DisplayNameFor(model => model.Location)
-                </th>
-                <th style="color:orangered">
-                    @Html.DisplayNameFor(model => model.PickupCapacity)
-                </th>
-                <th style="color:orangered">
-                    @Html.DisplayNameFor(model => model.ScheduledDate)
-                </th>
-                <th></th>
-                </tr>
-
-                @foreach (var item in Model)
+<div class="row" style="background-color: darkorange">
+    <div class="col-md-4" style="color: antiquewhite">
+        <h2>Store Entries</h2>
+        <p>
+            View submitted store entries below:
+            <table class="table">
+                @using (Html.BeginForm())
                 {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ScheduledDate)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PickupCapacity)
-                        </td>
-                        <td>
-                           *This needs to be fixed
-                            @Html.DisplayFor(modelItem => item.Location)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.PickupNumber }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.PickupNumber }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.PickupNumber })
-                        </td>
-                    </tr>
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        <h4>Request</h4>
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group" style="color:orangered">
+                            @Html.LabelFor(model => model.Location, "Location", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("StoreNumber", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        </div>
                 }
+</p>
 
-                </table>*@
-            </p>
 
-        </div>
-        <div class="col-md-4" style="color: antiquewhite">
-            <h2>Clean-Up Date Selection</h2>
-            <p>Select a clean-up date below:</p>
-
+    </div>
+    <div class="col-md-4" style="color: antiquewhite">
+        <h2>Clean-Up Date Selection</h2>
+        <p>Select a clean-up date below:</p>
 
 
 
-        </div>
-        <div class="col-md-4" style="color: antiquewhite">
-            <h2>Truck/Trailer Number</h2>
-            <p>Your truck/trailer number is listed below:</p>
-            <p>Truck/Trailer Number Assigned: {}</p>
-        </div>
+
+    </div>
+    <div class="col-md-4" style="color: antiquewhite">
+        <h2>Truck/Trailer Number</h2>
+        <p>Your truck/trailer number is listed below:</p>
+        <p>Truck/Trailer Number Assigned: {}</p>
     </div>
 </div>

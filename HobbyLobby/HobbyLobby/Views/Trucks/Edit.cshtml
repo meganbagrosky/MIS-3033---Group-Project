@@ -1,42 +1,46 @@
-﻿@model HobbyLobby.Models.Truck
+﻿@model IEnumerable<HobbyLobby.Models.Pickup>
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "PickupList";
 }
 
-<h2>Edit</h2>
+<h2>PickupList</h2>
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ScheduledDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PickupCapacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Truck.TruckNumber)
+        </th>
+        <th></th>
+    </tr>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Truck</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.TruckNumber)
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScheduledDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PickupCapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Truck.TruckNumber)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PickupNumber }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PickupNumber }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PickupNumber })
+            </td>
+        </tr>
+    }
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Capacity, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Capacity, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Capacity, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+</table>
