@@ -1,106 +1,58 @@
 ﻿@model IEnumerable<HobbyLobby.Models.Pickup>
+
 @{
-    ViewBag.Title = "?????";
+    ViewBag.Title = "Index";
 }
 
+<h2 style="color:orangered">Scheduled Clean-Ups</h2>
+<div>
+    <div class="jumbotron" style="background-color:navy">
+        <img src="https://1000logos.net/wp-content/uploads/2020/09/Hobby-Lobby.png" class="mx-auto d-block" style="width:50%" />
 
-<div class="row" style="background-color: darkorange">
-    <div class="col-md-4" style="color: antiquewhite">
-        <h2>Store Entries</h2>
-        <p>
-            View submitted store entries below:
-            <table class="table">
-                @using (Html.BeginForm())
-                {
-                    @Html.AntiForgeryToken()
-
-                    <div class="form-horizontal">
-                        <h4>Request</h4>
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        <div class="form-group" style="color:orangered">
-                            @Html.LabelFor(model => model.StoreNumber, "Location", htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.DropDownList("StoreNumber", null, htmlAttributes: new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.StoreNumber, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                    </div>
-                }
-            </table>
-
-
-    </div>
-    <div class="col-md-4" style="color: antiquewhite">
-        <h2>Clean-Up Date Selection</h2>
-        <p>Select a clean-up date below:</p>
-
-
-
-
-    </div>
-    <div class="col-md-4" style="color: antiquewhite">
-        <h2>Truck/Trailer Number</h2>
-        <p>Your truck/trailer number is listed below:</p>
-        <p>Truck/Trailer Number Assigned: {}</p>
     </div>
 </div>
 
-@*
-    <div class="row" style="background-color: darkorange">
-    <div class="col-md-4" style="color: antiquewhite">
-        <h2>Store Entries</h2>
-        <p>
-            View submitted store entries below:
-            <table class="table">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ScheduledDate)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.PickupCapacity)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Truck.TruckNumber)
-                    </th>
-                    <th>
-                         @Html.DisplayNameFor(model => model.Pickup.StoreNumber)
-                    </th>
-<th></th>
-                </tr>
-
-@foreach (var item in Model)
-{
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ScheduledDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PickupCapacity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Truck.TruckNumber)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.PickupNumber }) |
-            @Html.ActionLink("Details", "Details", new { id = item.PickupNumber }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.PickupNumber })
-        </td>
+        <th>
+            @Html.DisplayNameFor(model => model.ScheduledDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Truck.Capacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Truck.TruckNumber)
+        </th>
+        @* <th>
+                @Html.DisplayNameFor(model => model.Request.StoreNumber)
+            </th>*@
+        <th></th>
     </tr>
 
-}
-            </table>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScheduledDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Truck.Capacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Truck.TruckNumber)
+            </td>
+            <td>
+                @* @Html.DisplayFor(modelItem => item.Store.StoreNumber)*@
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PickupNumber }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PickupNumber }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PickupNumber })
+            </td>
+        </tr>
+    }
 
-    </div>
-<div class="col-md-4" style="color: antiquewhite">
-    <h2>Clean-Up Date Selection</h2>
-    <p>Select a clean-up date below:</p>
-
-
-
-</div>
-<div class="col-md-4" style="color: antiquewhite">
-    <h2>Truck/Trailer Number</h2>
-    <p>Your truck/trailer number is listed below:</p>
-    <p>Truck/Trailer Number Assigned: @Html.DisplayFor(modelItem => Truck.TruckNumber) </p>
-</div>
-</div>*@
+</table>

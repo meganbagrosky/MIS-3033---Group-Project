@@ -16,11 +16,7 @@
         <p class="lead" style="color: white">On this page, you will be able to see store entries, select clean-up dates, and see your truck/trailer number</p>
     </div>
 </div>
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<div class="row" style="background-color: darkorange">
-    <div class="col-md-4" style="color: antiquewhite">
+
         <h2>Store Entries</h2>
         <p>
             View submitted store entries below:
@@ -34,7 +30,7 @@
                     @Html.DisplayNameFor(model => model.Store.Location)
                 </th>
                 <th style="color:orangered">
-                    @Html.DisplayNameFor(model => model.Pickup.PickupCapacity)
+                    Total Feet Required
                 </th>
                 <th></th>
             </tr>
@@ -53,12 +49,9 @@
             </td>
             <td>
                 <a class="btn btn-primary" href="https://localhost:44362/Pickup/Create" role="button" style="text-align:center;margin-right:10px;">Assign a Truck Number</a>
-                @* @Html.ActionLink("Details", "Truck", new { id = item.PickupNumber }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.PickupNumber })*@
+                <a class="btn btn-primary" href="https://localhost:44362/Pickup/Index" role="button" style="text-align:center;margin-right:10px;">View Clean-ups</a>
             </td>
         </tr>
             }
 
         </table>
-    </div>
-</div>
