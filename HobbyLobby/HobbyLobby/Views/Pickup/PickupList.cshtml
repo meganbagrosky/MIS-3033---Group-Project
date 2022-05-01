@@ -1,46 +1,63 @@
 ﻿@model IEnumerable<HobbyLobby.Models.Pickup>
 
 @{
-    ViewBag.Title = "PickupList";
+    ViewBag.Title = "TransportationView";
 }
 
-<h2>PickupList</h2>
 
+
+<a id="backbutton" class="btn btn-default" href="https://localhost:44362/Home/Index" role="button"><img src="~/Images/backbutton2.png" height="50" width="50"></a>
+
+<h2 style="color:orangered">Hobby Lobby Transportation</h2>
+<div>
+    <div class="jumbotron" style="background-color:navy">
+        <img src="https://1000logos.net/wp-content/uploads/2020/09/Hobby-Lobby.png" class="mx-auto d-block" style="width:50%" />
+        <br />
+        <p class="lead" style="color: white">On this page, you will be able to see store entries, select clean-up dates, and see your truck/trailer number</p>
+    </div>
+</div>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @* @Html.DisplayNameFor(model => model.ScheduledDate)*@
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PickupCapacity)
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.Truck.TruckNumber)*@
-        </th>
-        <th></th>
-    </tr>
+<div class="row" style="background-color: darkorange">
+    <div class="col-md-4" style="color: antiquewhite">
+        <h2>Store Entries</h2>
+        <p>
+            View submitted store entries below:
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ScheduledDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PickupCapacity)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Truck.TruckNumber)
+                    </th>
+                    <th></th>
+                </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @* @Html.DisplayFor(modelItem => item.ScheduledDate)*@
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PickupCapacity)
-            </td>
-            <td>
-                @* @Html.DisplayFor(modelItem => item.Truck.TruckNumber)*@
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.PickupNumber }) |
-                @Html.ActionLink("Details", "Details", new { id = item.PickupNumber }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.PickupNumber })
-            </td>
-        </tr>
-    }
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ScheduledDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PickupCapacity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Truck.TruckNumber)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.PickupNumber }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.PickupNumber }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.PickupNumber })
+                        </td>
+                    </tr>
 
-</table>
+                }
+            </table>
+</div>
+</div>
