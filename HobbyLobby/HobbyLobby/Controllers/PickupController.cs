@@ -18,8 +18,8 @@ namespace HobbyLobby.Controllers
         public ActionResult Index()
         {
             var pickups = db.Pickups.Include(p => p.Truck);
-            var requests = db.Pickups.Include(r => r.Requests);
-           // var store = db.Pickups.Include(s => s.Store);
+            ViewBag.Request = new SelectList(db.Stores, "StoreLocation", "StoreLocation");
+            var requests = db.Requests.Include(r => r.Pickup).Include(r => r.Store);
             return View(pickups.ToList());
         }
 
@@ -42,9 +42,14 @@ namespace HobbyLobby.Controllers
         public ActionResult Create()
         {
             ViewBag.TruckNumber = new SelectList(db.Trucks, "TruckNumber", "TruckNumber");
-            ViewBag.Request = new SelectList(db.Requests, "StoreNumber", "StoreNumber");
+            ViewBag.Request = new SelectList(db.Requests, "PickupNumber", "PickupNumber");
             ViewBag.Location = new SelectList(db.Stores, "Location", "Location");
             return View();
+        }
+
+        public ActionResult PickupList()
+        {
+            return View(db.Trucks.ToList());
         }
 
         // POST: Pickup/Create
@@ -62,7 +67,7 @@ namespace HobbyLobby.Controllers
             }
 
             ViewBag.TruckNumber = new SelectList(db.Trucks, "TruckNumber", "TruckNumber", pickup.TruckNumber);
-            
+
             //ViewBag.StoreNumber = new SelectList(db.Stores, "Location", "Location", pickup.StoreNumber);
             return View(pickup);
         }
