@@ -130,9 +130,12 @@
                     @Html.DisplayFor(modelItem => item.StoreNumber)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.RequestNumber }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.RequestNumber }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.RequestNumber })
+                    @*@Html.ActionLink("Edit","RequestForm", "Edit", new { id = item.RequestNumber }) |
+        @Html.ActionLink("Details", "Details", new { id = item.RequestNumber }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.RequestNumber })*@
+                    <a href="https://localhost:44362/RequestForm/Edit/@item.RequestNumber">Edit</a>
+                    <a href="https://localhost:44362/RequestForm/Details/@item.RequestNumber">Details</a>
+                    <a href="https://localhost:44362/RequestForm/Delete/@item.RequestNumber">Delete</a>
                 </td>
             </tr>
         }

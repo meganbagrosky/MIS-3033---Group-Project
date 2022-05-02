@@ -69,12 +69,15 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
         </div>
     }
+</div>
+<div id="AbsDiv">
+    <a class="btn btn-primary btn-sm" onclick="history.back()" role="button" style="margin-block:10px;">Back to List</a>
 </div>
