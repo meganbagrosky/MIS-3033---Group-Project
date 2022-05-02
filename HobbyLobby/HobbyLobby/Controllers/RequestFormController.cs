@@ -97,7 +97,7 @@ namespace HobbyLobby.Controllers
             {
                 db.Entry(request).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Redirect($"https://localhost:44362/Stores/Details/{request.StoreNumber}");
             }
             ViewBag.PickupNumber = new SelectList(db.Pickups, "PickupNumber", "PickupNumber", request.PickupNumber);
             ViewBag.StoreNumber = new SelectList(db.Stores, "StoreNumber", "Location", request.StoreNumber);
@@ -127,7 +127,7 @@ namespace HobbyLobby.Controllers
             Request request = db.Requests.Find(id);
             db.Requests.Remove(request);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Redirect($"https://localhost:44362/Stores/Details/{request.StoreNumber}");
         }
 
         protected override void Dispose(bool disposing)
