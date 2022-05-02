@@ -61,7 +61,7 @@ namespace HobbyLobby.Controllers
             {
                 db.Requests.Add(request);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Redirect($"https://localhost:44362/Stores/Details/{request.StoreNumber}");
             }
 
             ViewBag.PickupNumber = new SelectList(db.Pickups, "PickupNumber", "PickupNumber", request.PickupNumber);
