@@ -45,34 +45,34 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ToteQuantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CartonQuantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LoadLockQuantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Comments)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreationDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PickupNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Store.Location)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.RequestNumber }) |
-                @Html.ActionLink("Details", "Details", new { id = item.RequestNumber }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.RequestNumber })
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ToteQuantity)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CartonQuantity)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LoadLockQuantity)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Comments)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CreationDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PickupNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Store.Location)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.RequestNumber }) |
+        @Html.ActionLink("Details", "Details", new { id = item.RequestNumber }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.RequestNumber })
+    </td>
+</tr>
     }
 
 </table>

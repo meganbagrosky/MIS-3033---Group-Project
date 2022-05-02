@@ -45,7 +45,7 @@ namespace HobbyLobby.Controllers
         // GET: RequestForm/Create
         public ActionResult Create()
         {
-            ViewBag.PickupNumber = new SelectList(db.Pickups, "PickupNumber", "PickupNumber");
+            ViewBag.PickupNumber = new SelectList(db.Pickups, "PickupNumber", "PickupCapacity");
             ViewBag.StoreNumber = new SelectList(db.Stores, "StoreNumber", "Location");
             return View();
         }
