@@ -31,9 +31,12 @@ namespace HobbyLobby.Controllers
                 {
                     request.Add(r);
                 }
-                foreach (var p in db.Pickups)
+            }
+            foreach (var p in db.Pickups)
+            {
+                foreach (var r in request)
                 {
-                    if (r.PickupNumber==p.PickupNumber)
+                    if (p.PickupNumber==r.PickupNumber)
                     {
                         pickup.Add(p);
                     }

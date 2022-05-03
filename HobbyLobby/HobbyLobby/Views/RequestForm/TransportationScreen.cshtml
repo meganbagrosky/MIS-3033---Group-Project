@@ -48,8 +48,8 @@
                 @Html.DisplayFor(modelItem => item.Pickup.PickupCapacity)
             </td>
             <td>
-                <a class="btn btn-primary" href="https://localhost:44362/Pickup/Create" role="button" style="text-align:center;margin-right:10px;">Assign a Truck Number</a>
-                <a class="btn btn-primary" href="https://localhost:44362/Pickup/Index" role="button" style="text-align:center;margin-right:10px;">View Clean-ups</a>
+                <a class="btn btn-primary" href="https://localhost:44362/Pickup/Edit/@item.PickupNumber" role="button" style="text-align:center;margin-right:10px;">Assign a Truck Number</a>
+                <a class="btn btn-primary" href="https://localhost:44362/RequestForm/Details/@item.RequestNumber" role="button" style="text-align:center;margin-right:10px;">View Clean-up Details</a>
             </td>
         </tr>
             }

@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Pickup</h4>
         <hr />
@@ -37,8 +37,12 @@
             @Html.LabelFor(model => model.PickupCapacity, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.PickupCapacity, new { htmlAttributes = new { @class = "form-control" } })
+
                 @Html.ValidationMessageFor(model => model.PickupCapacity, "", new { @class = "text-danger" })
-            </div>
+               
+                        @*@Html.DisplayFor(model => model.PickupCapacity)*@
+                  
+</div>
         </div>
 
         <div class="form-group">
@@ -48,6 +52,7 @@
         </div>
     </div>
 }
+
 <p>
     <div id="AbsDiv">
         <a class="btn btn-primary btn-sm" onclick="history.back()" role="button" style="margin-block:10px;">Back to List</a>

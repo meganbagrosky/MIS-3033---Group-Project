@@ -60,7 +60,7 @@
 </div>
 
 <div id="AbsDiv">
-    <a class="btn btn-primary btn-sm" id="NewRequest" href="https://localhost:44362/RequestForm/Create" role="button" style="margin-block:10px;">Create New request</a>
+    <a class="btn btn-primary btn-sm" id="NewRequest" href="https://localhost:44362/Pickup/Create" role="button" style="margin-block:10px;">Create New request</a>
 </div>
 
 <table class="table">
@@ -81,7 +81,10 @@
             @Html.DisplayNameFor(model => model.RequestName.CreationDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RequestName.Pickup.PickupCapacity)
+            @Html.DisplayNameFor(model => model.PickUpName.PickupCapacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PickUpName.PickupNumber)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.RequestName.Store.Location)
@@ -89,7 +92,6 @@
         <th>
             @Html.DisplayNameFor(model => model.RequestName.StoreNumber)
         </th>
-        <th></th>
     </tr>
     <div>
         @if (Model.RequestClass.Count() == 0)
@@ -104,41 +106,92 @@
         {
             foreach (var item in Model.RequestClass)
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ToteQuantity)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CartonQuantity)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LoadLockQuantity)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Comments)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreationDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Pickup.PickupCapacity)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Store.Location)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StoreNumber)
-                </td>
-                <td>
-                    @*@Html.ActionLink("Edit","RequestForm", "Edit", new { id = item.RequestNumber }) |
-        @Html.ActionLink("Details", "Details", new { id = item.RequestNumber }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.RequestNumber })*@
-                    <a href="https://localhost:44362/RequestForm/Edit/@item.RequestNumber">Edit</a>
-                    <a href="https://localhost:44362/RequestForm/Details/@item.RequestNumber">Details</a>
-                    <a href="https://localhost:44362/RequestForm/Delete/@item.RequestNumber">Delete</a>
-                </td>
-            </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToteQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CartonQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoadLockQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pickup.PickupCapacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pickup.PickupNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Store.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StoreNumber)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit","RequestForm", "Edit", new { id = item.RequestNumber }) |
+            @Html.ActionLink("Details", "Details", new { id = item.RequestNumber }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.RequestNumber })*@
+            <a href="https://localhost:44362/RequestForm/Edit/@item.RequestNumber">Edit</a>
+            <a href="https://localhost:44362/RequestForm/Details/@item.RequestNumber">Details</a>
+            <a href="https://localhost:44362/RequestForm/Delete/@item.RequestNumber">Delete</a>
+        </td>
+    </tr>
+            }
         }
+            </div>
+        </table>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PickUpName.ScheduledDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PickUpName.PickupCapacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PickUpName.Truck.TruckNumber)
+        </th>
+         <th>
+                @Html.DisplayNameFor(model => model.PickUpName.PickupNumber)
+            </th>
+        <th></th>
+    </tr>
+    @if (Model.PickupClass.Count()==0)
+    {
+        <a >No Request Has been made yet</a>
     }
-        </div>
-    </table>
+    else
+    {
+    foreach (var item in Model.PickupClass)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ScheduledDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PickupCapacity)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Truck.TruckNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PickupNumber)
+    </td>
+    <td>
+        <a href="https://localhost:44362/Pickup/Edit/@item.PickupNumber">Edit</a>
+        <a href="https://localhost:44362/Pickup/Details/@item.PickupNumber">Details</a>
+        @*<a href="https://localhost:44362/Pickup/Delete/@item.PickupNumber">Delete</a>*@
+    </td>
+</tr>
+    }
+
+    }
+
+</table>

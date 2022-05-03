@@ -4,7 +4,7 @@
     ViewBag.Title = "Create New Clean-up";
 }
 
-<h2 style="color:orangered">Assign A Truck Number</h2>
+<h2 style="color:orangered">Create Request</h2>
 
 <a id="backbutton" class="btn btn-default" onclick="history.back()" role="button"><img src="~/Images/backbutton2.png" height="50" width="50"></a>
 
@@ -19,38 +19,60 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>Pickup</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="form-horizontal">
+    <h4>Pickup</h4>
+    <hr />
+    @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.TruckNumber, "TruckNumber", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("TruckNumber", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.TruckNumber, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
+    @*<div class="form-group">
             @Html.LabelFor(model => model.ScheduledDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.ScheduledDate, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ScheduledDate, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+@*<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.PickupNumber)
+    </dt>
+
+    <dd>
+        <a>@Model.PickupNumber.ToString()</a>
+    </dd>
+</dl>*@
+
+    <a>Total Feet Needed to be Picked Up(By increments of 5 (e.g. 5,10...))</a>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PickupCapacity, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PickupCapacity, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PickupCapacity, "", new { @class = "text-danger" })
         </div>
     </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+@*<a class="btn btn-primary" href="https://localhost:44362/TransPassword/Index" role="button" style="text-align: center; margin-left: 10px;">Transportation</a>*@
+
+<p>
+    <div id="AbsDiv">
+        <a class="btn btn-primary btn-sm" onclick="history.back()" role="button" style="margin-block:10px;">Back to List</a>
+    </div>
+</p>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -55,7 +55,7 @@ namespace HobbyLobby.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "RequestNumber,StoreNumber,,ToteQuantity,CartonQuantity,LoadLockQuantity,Comments,CreationDate")] Request request)
+        public ActionResult Create([Bind(Include = "RequestNumber,StoreNumber,PickupNumber,ToteQuantity,CartonQuantity,LoadLockQuantity,Comments,CreationDate")] Request request)
         {
             if (ModelState.IsValid)
             {
