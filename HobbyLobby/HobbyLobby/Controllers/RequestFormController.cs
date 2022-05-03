@@ -55,7 +55,7 @@ namespace HobbyLobby.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "RequestNumber,StoreNumber,PickupNumber,ToteQuantity,CartonQuantity,LoadLockQuantity,Comments,CreationDate")] Request request)
+        public ActionResult Create([Bind(Include = "RequestNumber,StoreNumber,,ToteQuantity,CartonQuantity,LoadLockQuantity,Comments,CreationDate")] Request request)
         {
             if (ModelState.IsValid)
             {
@@ -63,6 +63,7 @@ namespace HobbyLobby.Controllers
                 db.SaveChanges();
                 return Redirect($"https://localhost:44362/Stores/Details/{request.StoreNumber}");
             }
+
 
             ViewBag.PickupNumber = new SelectList(db.Pickups, "PickupNumber", "PickupNumber", request.PickupNumber);
             ViewBag.StoreNumber = new SelectList(db.Stores, "StoreNumber", "Location", request.StoreNumber);
@@ -129,6 +130,8 @@ namespace HobbyLobby.Controllers
             db.SaveChanges();
             return Redirect($"https://localhost:44362/Stores/Details/{request.StoreNumber}");
         }
+
+
 
         protected override void Dispose(bool disposing)
         {

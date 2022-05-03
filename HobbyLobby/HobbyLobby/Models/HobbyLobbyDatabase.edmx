@@ -108,8 +108,8 @@
             <PropertyRef Name="PickupNumber" />
           </Key>
           <Property Name="PickupNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TruckNumber" Type="Int32" />
-          <Property Name="ScheduledDate" Type="DateTime" Precision="3" />
+          <Property Name="TruckNumber" Type="Int32" Nullable="true" />
+          <Property Name="ScheduledDate" Type="DateTime" Precision="3" Nullable="true" />
           <Property Name="PickupCapacity" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <NavigationProperty Name="Truck" Relationship="Self.FK_Pickup_Truck" FromRole="Pickup" ToRole="Truck" />
           <NavigationProperty Name="Requests" Relationship="Self.FK_Request_Pickup" FromRole="Pickup" ToRole="Request" />
@@ -120,7 +120,7 @@
           </Key>
           <Property Name="RequestNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="StoreNumber" Type="Int32" Nullable="false" />
-          <Property Name="PickupNumber" Type="Int32" />
+          <Property Name="PickupNumber" Type="Int32" Nullable="true" />
           <Property Name="ToteQuantity" Type="Int32" Nullable="false" />
           <Property Name="CartonQuantity" Type="Int32" Nullable="false" />
           <Property Name="LoadLockQuantity" Type="Int32" Nullable="false" />

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Huyn0029\Source\Repos\meganbagrosky\MIS-3033---Group-Project\HobbyLobby\HobbyLobby\Models\HobbyLobbyDatabase.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\ghern\Source\Repos\meganbagrosky\MIS-3033---Group-Project\HobbyLobby\HobbyLobby\Models\HobbyLobbyDatabase.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

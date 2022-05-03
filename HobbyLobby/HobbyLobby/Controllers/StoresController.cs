@@ -24,18 +24,29 @@ namespace HobbyLobby.Controllers
         public ActionResult Details(int? id)
         {
             List<Request> request = new List<Request>();
+            List<Pickup> pickup = new List<Pickup>();
             foreach (var r in db.Requests)
             {
                 if (r.StoreNumber == id)
                 {
                     request.Add(r);
                 }
+                foreach (var p in db.Pickups)
+                {
+                    if (r.PickupNumber==p.PickupNumber)
+                    {
+                        pickup.Add(p);
+                    }
+                }
             }
+
             var tables = new StoreRequestView
             {
+                PickupClass = pickup,
                 RequestClass = request,
                 StoreClass = db.Stores.Find(id),
-                RequestName = db.Requests.Find(id)
+                RequestName = db.Requests.Find(id),
+                PickUpName = db.Pickups.Find(id)
             };
             return View(tables);
         }

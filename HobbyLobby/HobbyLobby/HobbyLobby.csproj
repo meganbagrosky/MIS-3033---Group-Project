@@ -156,6 +156,7 @@
     <Compile Include="Models\Pickup.cs">
       <DependentUpon>HobbyLobbyDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\PickUpRequest.cs" />
     <Compile Include="Models\Request.cs">
       <DependentUpon>HobbyLobbyDatabase.tt</DependentUpon>
     </Compile>
