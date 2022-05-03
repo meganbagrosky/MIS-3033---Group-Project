@@ -151,13 +151,13 @@ namespace HobbyLobby.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditTSide([Bind(Include = "PickupNumber,TruckNumber,ScheduledDate")] Pickup pickup)
+        public ActionResult EditTSide([Bind(Include = "PickupNumber,TruckNumber,ScheduledDate,PickupCapacity")] Pickup pickup)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(pickup).State = EntityState.Modified;
                 db.SaveChanges();
-                return Redirect("https://localhost:44362/RequestForm/TransportationScreen");
+                return Redirect($"https://localhost:44362/Pickup/EditTSide/{pickup.PickupNumber}");
             }
             ViewBag.TruckNumber = new SelectList(db.Trucks, "TruckNumber", "TruckNumber", pickup.TruckNumber);
             return View(pickup);
